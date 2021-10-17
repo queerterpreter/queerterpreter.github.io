@@ -1,3 +1,14 @@
+---
+title: "CSS code to display alt on Twitter, and other such tweaks"
+author: "Ártemis López"
+date: "Last updated: 17 October 2021"
+output: 
+  html_document:
+    theme: cerulean
+    highlight: default
+---
+
+
 # CSS code to display alt on Twitter, and other such tweaks
 
 Works with the *Stylus* extension on Chrome, Firefox, Opera, +?. Codes #1, #2 and #4 come directly from Twitter user @lunasorcery and [this great thread of hers](https://twitter.com/lunasorcery/status/1361796263721775104 "this great thread of hers"); #3 is my frankenstein off of her code.
