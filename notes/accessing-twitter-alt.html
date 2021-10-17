@@ -1,6 +1,7 @@
 <h1 id="css-code-to-display-alt-on-twitter-and-other-such-tweaks">CSS code to display alt on Twitter, and other such tweaks</h1>
 <p>Works with the <em>Stylus</em> extension on Chrome, Firefox, Opera, +?. Codes #1, #2 and #4 come directly from Twitter user @lunasorcery and <a href="https://twitter.com/lunasorcery/status/1361796263721775104" title="this great thread of hers">this great thread of hers</a>; #3 is my frankenstein off of her code.</p>
 <p>The snippets can be combined into one larger CSS code, or they can be added to Stylus as separate codes that can be individually toggled on and off. I personally always have the red frame code (#2) enabled, but sometimes disable the only alt code (#3).</p>
+<p>The codes are designed for Twitter\&#39;s weird system, don\&#39;t work on other sites and also don\&#39;t work with gifs, only with regular, static images.</p>
 <h2 id="1-display-only-images-with-alt-text">1. Display only images with alt text</h2>
 <p>Images without alt text won\&#39;t load and will be replaced by \&quot;image\&quot; in whichever language you have your Twitter set up. This can be circumvented by clicking on the space where the image would be, which will open it in the Twitter viewer and will display properly.</p>
 <pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[aria-label="Image"]</span>{
