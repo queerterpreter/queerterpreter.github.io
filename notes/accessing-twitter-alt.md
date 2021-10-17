@@ -26,6 +26,7 @@ div[aria-label="Image"] *{
 
 ## 2. Display a big red frame around images with no alt
 Like so:
+
 [![Two tweets with and without alt text. Both have the same image of blue hydrangeas. The tweet with alt text displays normally, the one without displays with a red frame around the image.](https://queerterpreter.github.io/images/redframe.png "Two tweets with and without alt text. Both have the same image of blue hydrangeas. The tweet with alt text displays normally, the one without displays with a red frame around the image.")](https://queerterpreter.github.io/images/redframe.png "Two tweets with and without alt text. Both have the same image of blue hydrangeas. The tweet with alt text displays normally, the one without displays with a red frame around the image.")
 ```css
 div[aria-label="Image"] {
@@ -36,6 +37,7 @@ div[aria-label="Image"] {
 
 ## 3. Display no images whatsoever, only their alt
 If an image has no alt, it will read \"image\" only, in whichever language you have your Twitter set up.
+
 [![The hydrangeas tweets with and without alt text. Neither tweet displays the image, just an empty space. Both images have text displayed, but while one reads "A low-lit closeup of blue hydrangea flowers," the other only reads "Image."](https://queerterpreter.github.io/images/onlyalt.png "The hydrangeas tweets with and without alt text. Neither tweet displays the image, just an empty space. Both images have text displayed, but while one reads \"A low-lit closeup of blue hydrangea flowers,\" the other only reads \"Image.\"")](https://queerterpreter.github.io/images/onlyalt.png "The hydrangeas tweets with and without alt text. Neither tweet displays the image, just an empty space. Both images have text displayed, but while one reads \"A low-lit closeup of blue hydrangea flowers,\" the other only reads \"Image.\"")
 ```css
 div[data-testid="tweetPhoto"] {
@@ -54,6 +56,7 @@ div[data-testid="tweetPhoto"] *{
 
 ## 4. Add a banner with the alt text on top of the images displayed
 Like so:
+
 [![The hydrangeas tweet with alt text. The image is displayed, and there's a black banner on the upper part of the image that contains the alt text.](https://queerterpreter.github.io/images/banner.png "The hydrangeas tweet with alt text. The image is displayed, and there's a black banner on the upper part of the image that contains the alt text.")](https://queerterpreter.github.io/images/banner.png "The hydrangeas tweet with alt text. The image is displayed, and there's a black banner on the upper part of the image that contains the alt text.")
 ```css
 div[data-testid="tweetPhoto"]:not([aria-label="Image"]) {
