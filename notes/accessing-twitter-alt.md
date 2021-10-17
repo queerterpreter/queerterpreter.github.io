@@ -4,6 +4,8 @@ Works with the *Stylus* extension on Chrome, Firefox, Opera, +?. Codes #1, #2 an
 
 The snippets can be combined into one larger CSS code, or they can be added to Stylus as separate codes that can be individually toggled on and off. I personally always have the red frame code (#2) enabled, but sometimes disable the only alt code (#3).
 
+The codes are designed for Twitter's weird system, don't work on other sites and also don't work with gifs, only with regular, static images.
+
 ## 1. Display only images with alt text
 Images without alt text won\'t load and will be replaced by \"image\" in whichever language you have your Twitter set up. This can be circumvented by clicking on the space where the image would be, which will open it in the Twitter viewer and will display properly.
 ```css
