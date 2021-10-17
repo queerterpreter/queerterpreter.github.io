@@ -1,0 +1,60 @@
+<h1 id="css-code-to-display-alt-on-twitter-and-other-such-tweaks">CSS code to display alt on Twitter, and other such tweaks</h1>
+<p>Works with the <em>Stylus</em> extension on Chrome, Firefox, Opera, +?. Codes #1, #2 and #4 come directly from Twitter user @lunasorcery and <a href="https://twitter.com/lunasorcery/status/1361796263721775104" title="this great thread of hers">this great thread of hers</a>; #3 is my frankenstein off of her code.</p>
+<p>The snippets can be combined into one larger CSS code, or they can be added to Stylus as separate codes that can be individually toggled on and off. I personally always have the red frame code (#2) enabled, but sometimes disable the only alt code (#3).</p>
+<h2 id="1-display-only-images-with-alt-text">1. Display only images with alt text</h2>
+<p>Images without alt text won\&#39;t load and will be replaced by \&quot;image\&quot; in whichever language you have your Twitter set up. This can be circumvented by clicking on the space where the image would be, which will open it in the Twitter viewer and will display properly.</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[aria-label="Image"]</span>{
+    <span class="hljs-attribute">background</span>: <span class="hljs-number">#000</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[aria-label="Image"]</span><span class="hljs-selector-pseudo">:after</span>{
+    <span class="hljs-attribute">content</span>:<span class="hljs-string">"Image"</span>;
+    <span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">text-align</span>:center;
+    <span class="hljs-attribute">font-size</span>:<span class="hljs-number">50pt</span>;
+    <span class="hljs-attribute">font-family</span>:sans-serif;
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[aria-label="Image"]</span> *{
+    <span class="hljs-attribute">display</span>:none;
+}
+</code></pre>
+<h2 id="2-display-a-big-red-frame-around-images-with-no-alt">2. Display a big red frame around images with no alt</h2>
+<p>Like so:</p>
+<p><a href="https://queerterpreter.github.io/images/redframe.png" title="Two tweets with and without alt text. Both have the same image of blue hydrangeas. The tweet with alt text displays normally, the one without displays with a red frame around the image."><img src="https://queerterpreter.github.io/images/redframe.png" alt="Two tweets with and without alt text. Both have the same image of blue hydrangeas. The tweet with alt text displays normally, the one without displays with a red frame around the image." title="Two tweets with and without alt text. Both have the same image of blue hydrangeas. The tweet with alt text displays normally, the one without displays with a red frame around the image."></a></p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[aria-label="Image"]</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">border</span>: <span class="hljs-number">20px</span> solid <span class="hljs-number">#f00</span>;
+}
+</code></pre>
+<h2 id="3-display-no-images-whatsoever-only-their-alt">3. Display no images whatsoever, only their alt</h2>
+<p>If an image has no alt, it will read \&quot;image\&quot; only, in whichever language you have your Twitter set up.</p>
+<p><a href="https://queerterpreter.github.io/images/onlyalt.png" title="The hydrangeas tweets with and without alt text. Neither tweet displays the image, just an empty space. Both images have text displayed, but while one reads \&quot;A low-lit closeup of blue hydrangea flowers,\&quot; the other only reads \&quot;Image.\&quot;"><img src="https://queerterpreter.github.io/images/onlyalt.png" alt="The hydrangeas tweets with and without alt text. Neither tweet displays the image, just an empty space. Both images have text displayed, but while one reads &quot;A low-lit closeup of blue hydrangea flowers,&quot; the other only reads &quot;Image.&quot;" title="The hydrangeas tweets with and without alt text. Neither tweet displays the image, just an empty space. Both images have text displayed, but while one reads \&quot;A low-lit closeup of blue hydrangea flowers,\&quot; the other only reads \&quot;Image.\&quot;"></a></p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-testid="tweetPhoto"]</span> {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-testid="tweetPhoto"]</span><span class="hljs-selector-pseudo">:after</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(aria-label);
+    <span class="hljs-attribute">color</span>:<span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">font-family</span>:sans-serif;
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-testid="tweetPhoto"]</span> *{
+    <span class="hljs-attribute">display</span>:none;
+}
+</code></pre>
+<h2 id="4-add-a-banner-with-the-alt-text-on-top-of-the-images-displayed">4. Add a banner with the alt text on top of the images displayed</h2>
+<p>Like so:</p>
+<p><a href="https://queerterpreter.github.io/images/banner.png" title="The hydrangeas tweet with alt text. The image is displayed, and there&#39;s a black banner on the upper part of the image that contains the alt text."><img src="https://queerterpreter.github.io/images/banner.png" alt="The hydrangeas tweet with alt text. The image is displayed, and there&#39;s a black banner on the upper part of the image that contains the alt text." title="The hydrangeas tweet with alt text. The image is displayed, and there&#39;s a black banner on the upper part of the image that contains the alt text."></a></p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-testid="tweetPhoto"]</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-attr">[aria-label="Image"]</span>) {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+}
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-testid="tweetPhoto"]</span><span class="hljs-selector-pseudo">:not(</span><span class="hljs-selector-attr">[aria-label="Image"]</span>)<span class="hljs-selector-pseudo">:after</span> {
+    <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(aria-label);
+    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(0,0,0,.75);
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">font-family</span>: sans-serif;
+}
+</code></pre>
+<p>If you have any more code suggestions for Twitter accessibility, I\&#39;d be happy to add them here (with proper credit, of course)!</p>
